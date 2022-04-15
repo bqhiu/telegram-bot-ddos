@@ -22,12 +22,15 @@ func main() {
 		if update.Message == nil {
 			continue
 		}
+		if string(update.Message.Text[0]) != PREFIX {
+			continue
+		}
 		cmdAction, _ := ParseCommand(update.Message.Text)
 		action, ok := actions[cmdAction].(func(*tgbotapi.BotAPI, tgbotapi.Update))
 		if !ok {
 			continue
 		}
-		go action(bot, update)
+		action(bot, update)
 	}
 }
 
