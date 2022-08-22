@@ -1,7 +1,7 @@
 package main
 
 const (
-	TOKEN  string = "5246241775:AAHeg-CU8bCMC4ieEGEAAxkC_qXEPUfO3CQ"
+	TOKEN  string = ""
 	PREFIX string = "."
 )
 
